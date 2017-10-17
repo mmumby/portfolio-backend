@@ -1,21 +1,23 @@
-'use strict';
+// 'use strict';
 
-const knex = require('knex');
-const knexLogger = require('knex-logger');
+// const knex = require('knex')({
+//   client: 'pg'
+// });
+// const knexLogger = require('knex-logger');
 
-let knexHandle;
+// let knexHandle;
 
-//setup knex connection
+// //setup knex connection
 
-const init = function(app, knexConfig) {
-  knexHandle = knex(knexConfig);
-  app.use(knexLogger(knexHandle));
-  return knexHandle;
-}
+// const init = function(app, knexConfig) {
+//   knexHandle = knex(knexConfig);
+//   app.use(knexLogger(knexHandle));
+//   return knexHandle;
+// }
 
-//get a reference to knex connection
-const handle = function(){
-  return knexHandle;
-};
+// //get a reference to knex connection
+// const handle = function(){
+//   return knexHandle;
+// };
 
-module.exports = { init, handle };
+// module.exports = { init, handle };

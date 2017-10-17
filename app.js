@@ -4,11 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-const db = require('./db');
-const knexConfig = require('./knexfile');
+// const db = require('./db');
+// const knexConfig = require('./knexfile');
 
-db.init(app, knexConfig[ENV]);
-const knex = db.handle();
+// db.init(app);
+// const knex = db.handle();
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -36,6 +36,17 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+// app.get('/', (req, res) =>{
+//   knex('projects')
+//   .select(['*'])
+//   .then((results) =>{
+//     let templateVars = {
+//       projects: results
+//     };
+//     res.render('index', templateVars)
+//   })
+// })
 
 // error handler
 app.use(function(err, req, res, next) {
